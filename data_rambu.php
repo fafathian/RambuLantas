@@ -81,3 +81,45 @@ $result = mysqli_query($mysqli, "SELECT * FROM Gambar"); ?>
 </body>
 
 </html>
+
+            <!-- <div class="kumpulan-rambu">
+                <h2 class="mb-4 mt-4">Data Gambar Rambu Lalu Lintas</h2>
+                <a href="delete_all.php" class="btn btn-danger mt-4 mb-4" onclick="return alert('Are you sure you want to delete all?')">Delete All</a>
+                <table class="table table-responsive table-striped">
+                    <thead style="  display:block;
+                                max-height:500px;
+                                overflow-y:auto;">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th width="50%">Gambar</th>
+                            <th width="30%">Keterangan Gambar</th>
+                            <th width="20%">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody style="  display:block;
+                                max-height:500px;
+                                overflow-y:auto;">
+                                <?php $i = 0; ?>
+                        <?php
+                        // include database
+                        include 'config.php';
+                        // perintah sql untuk menampilkan daftar bank yang berelasi dengan tabel kategori bank
+                        $sql = "select * from gambar order by Id_gambar desc";
+                        $hasil = mysqli_query($mysqli, $sql);
+                        $no = 0;
+                        //Menampilkan data dengan perulangan while
+                        while ($data = mysqli_fetch_array($hasil)) :
+                            $i++;
+                        ?>
+                            <tr>
+                                <td><?= $i; ?></td>
+                                <td width="40%"><img src="file/<?php echo $data['name']; ?>" class="rounded" width='60%%' alt="Cinque Terre"></td>
+                                <td style="width: 440px;"><?= nl2br($data["name_text"]); ?></td>
+                                <td><a href="edit.php?Id_gambar=<?= $data["Id_gambar"]; ?>" class='btn btn-warning'>Edit</a>
+                                    <a href="delete.php?Id_gambar=<?= $data["Id_Gambar"]; ?>" class="btn btn-danger" onclick="return alert('Are you sure you want to delete?')">Delete</a>
+                            </tr>
+                            <!-- bagian akhir (penutup) while -->
+            <!-- <?php endwhile; ?> -->
+            <!-- </tbody> -->
+            <!-- </table>
+            </div> --> -->
